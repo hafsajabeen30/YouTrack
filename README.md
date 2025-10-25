@@ -294,6 +294,7 @@ exports.rule = entities.Issue.onChange({
     ctx.issue.addComment("Work started by " + ctx.currentUser.fullName);
   }
 });
+```js
 
 ### 2.4 Time Tracking Workflow
 
