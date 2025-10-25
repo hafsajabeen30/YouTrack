@@ -286,30 +286,13 @@ You can use either:
 ### 2.2 Example Auto Comment
 Make YouTrack automatically add a comment when an issue moves to *In Progress*.
 
-```js
-exports.rule = entities.Issue.onChange({
-  title: "Auto comment when moved to In Progress",
-  guard: ctx => ctx.issue.fields.State.name == "In Progress",
-  action: ctx => {
-    ctx.issue.addComment("Work started by " + ctx.currentUser.fullName);
-  }
-});
+**alt text:** screenshot showing code.
 
 ### 2.3 Example Auto Card
 
 If you regularly create similar issues, YouTrack can generate a new one automatically when a task is done.
 
-```js
-exports.rule = entities.Issue.onChange({
-  title: "Auto create next task",
-  guard: ctx => ctx.issue.fields.State.name == "Done",
-  action: ctx => {
-    const newIssue = new entities.Issue(ctx.issue.project);
-    newIssue.summary = "Next task after " + ctx.issue.summary;
-    newIssue.save();
-  }
-});
-
+**alt text:** screenshot showing code.
 
 ### 2.4 Time Tracking Workflow
 
