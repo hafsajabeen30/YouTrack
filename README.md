@@ -294,3 +294,164 @@ exports.rule = entities.Issue.onChange({
     ctx.issue.addComment("Work started by " + ctx.currentUser.fullName);
   }
 });
+
+### 2.4 Time Tracking Workflow
+
+Automatically track how long each issue stays **In Progress**.
+
+**Steps:**
+1. Go to **Project Settings → Time Tracking**
+2. Enable **Time Tracking**
+3. Attach the built-in workflow **“In Progress Work Timer”**
+4. Click **Apply Fixes** if you see “Requires Setup.”
+
+Now, dragging a card to *In Progress* starts a timer, and moving it to *Done* stops it.
+
+**alt text:** screenshot showing Time Tracking configuration with workflow attached.
+
+---
+
+## 3. Agile Board
+
+### 3.1 Overview
+
+An **Agile Board** visually represents your project.  
+Each column represents a state (e.g., *Open → In Progress → To Verify → Done*).  
+Each card represents an issue.
+
+**alt text:** screenshot of Agile Board showing columns and cards.
+
+---
+
+### 3.2 Sprints
+
+Sprints are short development cycles (1–4 weeks).
+
+**To create a new sprint:**
+1. Click the sprint name at the top of the board.  
+2. Click **New Sprint.**  
+3. Set a **Name**, **Goal**, and **Date Range.**
+
+You can also pre-create multiple future sprints.
+
+**alt text:** screenshot showing New Sprint window with name, goal, and start/end date fields.
+
+---
+
+### 3.3 Swimlanes and Cards
+
+Swimlanes organize cards by **assignee**, **type**, or **tag**.
+
+**Steps:**
+1. Click **New Swimlane** (bottom right).  
+2. Choose the grouping filter (e.g., by *Assignee*).  
+3. Click **New Card** to create issues directly on the board.  
+
+Use tags like *Feature*, *Bug*, or *Improvement* for clarity.
+
+**alt text:** screenshot showing Agile Board with multiple swimlanes grouped by assignee.
+
+---
+
+### 3.4 Board Time Tracking
+
+With time tracking enabled:
+- Moving a card to *In Progress* starts a timer.  
+- Moving it elsewhere stops the timer.  
+
+Each card will show:
+- **Estimated Time**  
+- **Time Spent**  
+- **Progress Ring** (shows if you’re ahead or behind schedule)
+
+**alt text:** screenshot showing card with time tracking details and timer icon.
+
+---
+
+### 3.5 Board Settings
+
+Configure your board appearance and behavior.
+
+**Steps:**
+1. Click **Board Settings (gear icon)**  
+2. Modify **Columns and Swimlanes**  
+3. Add new states (like “To Verify” or “Testing”)  
+4. Configure **Chart Settings** for sprint reports (burndown, flow charts)
+
+**alt text:** screenshot showing Board Settings menu and Columns tab.
+
+---
+
+## 4. Reports and Dashboards
+
+### 4.1 Create a Report
+
+Reports help visualize team progress and workload.
+
+**Steps:**
+1. Go to **Reports → Create Report**  
+2. Choose report type (e.g., *Burndown Chart*, *Cumulative Flow*)  
+3. Configure:
+   - **Estimation Field:** Story Points / Issue Count  
+   - **Original Estimation Field:** Time Spent (optional)
+
+The **Y-axis** shows estimation; the **X-axis** shows time.
+
+**alt text:** screenshot showing Burndown Chart setup window with estimation fields.
+
+---
+
+### 4.2 Dashboard Overview
+
+Dashboards collect multiple reports into one screen.
+
+You can:
+- Add widgets like *Burndown*, *Cumulative Flow*, *Time Tracking*, *Pie Charts*  
+- Share dashboards with users or groups  
+- Switch to **List View** for issue hierarchy
+
+**alt text:** screenshot of Dashboard showing multiple widgets like charts and reports.
+
+---
+
+## 5. Integrations
+
+### 5.1 GitHub Integration
+
+Link YouTrack to your **GitHub repository** to connect commits and issues.
+
+**Steps:**
+1. Go to **Project Settings → VCS Integration**  
+2. Click **New VCS Integration...**  
+3. Select **GitHub**  
+4. Authorize YouTrack and choose your repository.
+
+Now, commits appear automatically in linked issues.
+
+**Example Commit Message:**
+
+git commit -m "Fix #MH-24: resolve login bug"
+
+YouTrack detects “#MH-24” and links it to the issue.
+
+**alt text:** screenshot showing GitHub integration page with repository connected.
+
+---
+
+### 5.2 VS Code Integration
+
+Integrate YouTrack directly into **Visual Studio Code.**
+
+**Steps:**
+1. Install **YouTrack Integration** extension from VS Code Marketplace.  
+2. Open Command Palette → `YouTrack: Issue List`  
+3. Select an issue → VS Code creates a Git branch automatically and sets issue to *In Progress.*  
+4. When finished, run `YouTrack: Close Issue` → merges branch and marks issue *Fixed.*
+
+This keeps issue tracking synced with your development workflow.
+
+**alt text:** screenshot showing VS Code with YouTrack extension panel and issue list.
+
+---
+
+**alt text:** screenshot showing YouTrack dashboard overview with reports and active sprint.
