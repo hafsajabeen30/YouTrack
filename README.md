@@ -294,7 +294,22 @@ exports.rule = entities.Issue.onChange({
     ctx.issue.addComment("Work started by " + ctx.currentUser.fullName);
   }
 });
+
+### 2.3 Example Auto Card
+
+If you regularly create similar issues, YouTrack can generate a new one automatically when a task is done.
+
 ```js
+exports.rule = entities.Issue.onChange({
+  title: "Auto create next task",
+  guard: ctx => ctx.issue.fields.State.name == "Done",
+  action: ctx => {
+    const newIssue = new entities.Issue(ctx.issue.project);
+    newIssue.summary = "Next task after " + ctx.issue.summary;
+    newIssue.save();
+  }
+});
+
 
 ### 2.4 Time Tracking Workflow
 
