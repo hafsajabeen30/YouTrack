@@ -48,7 +48,7 @@ Now you can:
 > Type: *Agile Software Development*  
 > Description: *A test application.*
 
-![alt text](/Images/16)
+![alt text](/Images/16.png)
 
 # YouTrack Project Setup Guide
 
