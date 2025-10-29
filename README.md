@@ -30,7 +30,9 @@
 - [Final Result](#8-final-result)
 
 
-## Project
+# YouTrack Project Setup Guide
+
+A step-by-step guide to setting up your YouTrack project with teammates, workflows, fields, time tracking, reports, dashboards, and integrations.
 
 ### Create a Project
 If you want to create a project, go to:  
@@ -50,63 +52,75 @@ Now you can:
 
 ![alt text](/Images/16.png)
 
-# YouTrack Project Setup Guide
-
-A step-by-step guide to setting up your YouTrack project with teammates, workflows, fields, time tracking, reports, dashboards, and integrations.
-
----
-
-## Create a New Project
-
-1. Go to **Projects → Create Project**  
-2. Fill in your project details (name, key, description, etc.)
-
 ---
 
 ## Add Teammates
 
-You can add team members in two ways:
+YouTrack is a great platform for working with teams. You can invite anyone with a YouTrack Account to your project. To do this, you need to go to the project settings. You can find it when you click on your project in the projects tab. You can add team members in two ways:
 
 ### Option 1 — During Project Creation
 - Add teammates directly under the **Team** section.
+![alt text](/Images/0.png)
 
 ### Option 2 — Later
 - Go to **Administration → Projects → [Your Project] → Team**
 - Click **Add User** and assign a role.
+![alt text](/Images/17.png)
 
 ---
 
 ## Access Control
 
+ On the Access page in Project Settings, you can view the roles assigned to users and groups within the project. To create a new role, follow these steps.
+
 ### Create Roles
 - Navigate to **Administration → Roles**
 - Click **New Role**
 - Define what permissions the role will have (e.g., Read Issues, Update Issues, Create Issues)
+![alt text](/Images/17.png)
 
 ### Define Capabilities
 Each role defines what users can do in the project — such as editing fields, changing states, or managing sprints.
+If you want to know more about the roles you can go to the administration settings of the youtrack server. 
+- Go to Access Management -> Roles.
+![alt text](/Images/5.png)
 
 ---
 
 ## Auth Modules
+It lets users log in to YouTrack with an account that is managed in the respective authentication service.
+Filter the list of modules by various attributes, including name, status (if it is enabled or not), and user accounts.
+
 Configure authentication under **Administration → Auth Modules**.
 
 You can integrate:
 - JetBrains Hub  
 - Google / GitHub OAuth  
 - Local YouTrack accounts  
+![alt text](/Images/19.png)
 
 ---
 
 ## Workflows
 
-Workflows automate project logic — for example, starting timers, assigning issues, or updating states.
+Workflows automate project logic — for example, starting timers, assigning issues, or updating states. This means you don’t have to do the same work over and over again.
 
 ### Create a Workflow
-1. Go to **Administration → Workflows**
-2. Click **New Workflow**
-3. Choose **Constructor**
-4. Define triggers, conditions, and actions.
+There are two ways to create a workflow
+- Go to **Administration → Workflows**
+- Click **New Workflow**
+  
+Now there are two ways to create a workflow
+
+#### Using a constructor
+i- Choose **Constructor**
+ii- Define triggers, conditions, and actions.
+![alt text](/Images/11.png)
+
+#### Using JavaScript Editor
+i- Choose **Javascript Editor**
+ii- Write the conditions.
+You can find the code here: [View main file → Automate_blogpost.js](./Automate_blogpost.js)
 
 ### Attach Workflow to Projects
 Once your workflow is ready:
@@ -114,32 +128,39 @@ Once your workflow is ready:
 2. Select your workflow
 3. Click **Manage Projects**
 4. Attach the workflow to the desired project(s)
-
+![alt text](/Images/14.png)
 ---
 
-## 🧩 Custom Fields
+## Custom Fields
 
 Custom fields define structured data for your issues (e.g., *Priority*, *RUP Workflow*, *Phase*).
 
 ### Add a Custom Field
 1. Go to **Administration → Projects → [Your Project] → Fields**
 2. Click **Add Field**
+![alt text](/Images/21.png)   
 3. Define:
    - **Field Name**
    - **Type** (e.g., `enum`, `string`, or `integer`)
    - **Aliases** (optional)
 4. After creating, define your **set of values** and edit as needed.
+![alt text](/Images/22.png)  
 
 Now, if you open an issue, you’ll see your new field visible on the issue card.
+![alt text](/Images/23.png)
 
 ---
 
 ## Time Tracking
+Before you go to the Agile board(s) of your project, I suggest turning on time tracking. This feature helps you automatically track how long a task or card is in progress. 
 
 ### Enable Time Tracking
 1. Turn on the **Time Tracking** field in your project.
-2. Go to **Administration → Workflows**
-3. If you see a “requires setup” message next to *In Progress Work Timer*, click it and then **Apply fixes**.
+![alt text](/Images/24.png)
+
+3. Go to **Administration → Workflows**
+4. If you see a “requires setup” message next to *In Progress Work Timer*, click it and then **Apply fixes**.
+![alt text](/Images/25.png)
 
 ✅ Once configured:
 - Moving a card to **In Progress** starts a timer  
@@ -149,7 +170,7 @@ Now, if you open an issue, you’ll see your new field visible on the issue card
 ---
 
 ## Reports
-
+To create a report, just click on "Reports." You’ll see different types of reports you can choose from. For example, you can select a burndown chart or cumulative report as one of the options.
 To create a report:
 
 1. Go to **Reports**
@@ -161,9 +182,10 @@ To create a report:
    - Period of time  
    - Report type  
    - Access permissions
-
+![alt text](/Images/26.png)
 **Example:**  
 Cumulative Flow Report — shows how issues progress through RUP phases over time.
+![alt text](/Images/27.png)
 
 ---
 
@@ -172,12 +194,15 @@ Cumulative Flow Report — shows how issues progress through RUP phases over tim
 ### 1️⃣ Dashboard
 - Gives a project-wide overview.
 - You can **add widgets** and **share dashboards** with other users or teams.
+![alt text](/Images/28.png)
 
 ### List View
 - Displays all issues, stories, and subtasks in a detailed list.
+![alt text](/Images/30.png)
 
 ### Agile Board
-- Visual workflow representation using columns and swimlanes.
+- Visual workflow representation using columns and swimlanes.Here you see a quick overview over an agile board.
+![alt text](/Images/1.png)
 
 ---
 
@@ -189,6 +214,7 @@ Cumulative Flow Report — shows how issues progress through RUP phases over tim
   - Click your current sprint → **New Sprint**
 - Use RUP naming convention:
   - Example: `Inception#1`, `Elaboration#1`, `Elaboration#2`, etc.
+![alt text](/Images/33.png)
 
 ---
 
@@ -198,6 +224,7 @@ Swimlanes group related issues horizontally by:
 - Custom field (e.g., Workflow or Phase)  
 - Priority  
 - Issue type (e.g., Bugs, Features)
+![alt text](/Images/45.png)
 
 Use them to:
 - Organize work by member  
@@ -216,18 +243,21 @@ Make sure your board reflects your workflow correctly:
   - Workflow  
   - Phase  
   - Tags  
+![alt text](/Images/36.png)
 
 ---
 
 ### Creating a New Card
 To create a new issue/card:
 - Click **“New Card”** in any swimlane  
-- Fill in the title, description, and other details  
+- Fill in the title, description, and other details
+![alt text](/Images/37.png)
 
 If your workflow includes automation:
 - The card will auto-assign you
 - Time tracking starts automatically when moved to *In Progress*
 - The issue history updates automatically
+As we did those things, we can see them here, including the time tracking, in-progress timer, auto assign, and updated description.
 
 ---
 
@@ -236,22 +266,20 @@ If your workflow includes automation:
 ### GitHub Integration
 1. Go to **Administration → Integrations → VCS Integration**
 2. Choose **GitHub Server**
-3. Connect your GitHub repository
-4. Commits mentioning issue IDs (e.g., `#MIN-12`) will appear under the related issue automatically.
+![alt text](/Images/vc.png)
+
+4. Connect your GitHub repository by adding the link to it. You can only create the repositories you have created yourself.
+5. Now it will ask you to create a token, which you can easily do if you click on "generate a token".
+6. Commits mentioning issue IDs (e.g., `#MIN-12`) will appear under the related issue automatically.
+![alt text](/Images/git.png)
 
 ---
 
 ### VS Code Integration
 1. Install the **YouTrack** extension in VS Code
-2. Configure your `.vscode/settings.json`:
-   ```json
-   {
-     "youtrack.userName": "your-username",
-     "youtrack.password": "your-permanent-token",
-     "youtrack.host": "https://yourproject.youtrack.cloud",
-     "youtrack.filter": "(assigned to: me) and #Unresolved"
-   }
-
+2. Configure your extension using your YouTrack user name and a token you generate in YouTrack.
+3. You should now be able to look at the issues in your VS Code. 
+![alt text](/Images/vscode.png)
 
 ---
 
