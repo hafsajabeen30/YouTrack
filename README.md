@@ -261,6 +261,48 @@ As we did those things, we can see them here, including the time tracking, in-pr
 
 ---
 
+## 7. Smart Search
+
+### 7.1 Overview
+Smart Search is YouTrack’s built-in **query-based filter system** that lets you find issues quickly using simple, keyword-style commands in the **top search bar**.  
+It works like Google Search — you type your query, and YouTrack instantly filters the issue list.
+
+![alt text](/Images/search.png)
+
+---
+
+### 7.2 Where to Use It
+1. Open your project → **Issues** page.  
+2. Click in the **search bar at the top**.  
+3. Type your query (YouTrack suggests fields and values).  
+4. Press **Enter** → matching issues appear immediately.
+
+You can also apply filters manually from the left sidebar — YouTrack automatically builds the same Smart Search query for you.
+
+---
+
+### 7.3 Example Queries
+
+| Query | Description |
+|--------|--------------|
+| `#MIN` | All issues in the **MindHaven** project *(replace MIN with your project key)* |
+| `project: MindHaven` | All issues in MindHaven project (using full name) |
+| `Assignee: me State: Open` | All open issues assigned to you |
+| `State: {Done}` | Issues whose state is Done |
+| `#MIN summary: "Blog Post" `|  All blog-related tasks this week |
+---
+![alt text](/Images/mhblog.png)
+
+### 7.4 Why It’s Called “Smart”
+- Autocompletes projects, users, and fields as you type.  
+- Understands partial matches (e.g., `prio: high` → “High Priority”).  
+- Supports natural time ranges (`updated: today`, `created: last week`).  
+- Integrates with custom fields unique to your project.  
+- Works inside dashboards, reports, and saved searches.
+
+---
+
+
 ## Integrations
 
 ### GitHub Integration
