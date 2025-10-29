@@ -43,10 +43,10 @@ Now you can:
 - Add a **description**
 
 > Example:  
-> Project Name: *MindHaven App*  
-> ID: *MH*  
+> Project Name: *Test App*  
+> ID: *TA*  
 > Type: *Agile Software Development*  
-> Description: *A mental-health journaling application.*
+> Description: *A test application.*
 
 **alt text:** screenshot of the project creation page with name, ID, type, and description fields.
 
@@ -98,7 +98,7 @@ You can integrate:
 
 ---
 
-## ⚙️ Workflows
+## Workflows
 
 Workflows automate project logic — for example, starting timers, assigning issues, or updating states.
 
@@ -231,7 +231,7 @@ If your workflow includes automation:
 
 ---
 
-## 🔗 Integrations
+## Integrations
 
 ### GitHub Integration
 1. Go to **Administration → Integrations → VCS Integration**
