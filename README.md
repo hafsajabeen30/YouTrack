@@ -48,7 +48,7 @@ Now you can:
 > Type: *Agile Software Development*  
 > Description: *A test application.*
 
-**alt text:** screenshot of the project creation page with name, ID, type, and description fields.
+![alt text](/Images/File16)
 
 # YouTrack Project Setup Guide
 
